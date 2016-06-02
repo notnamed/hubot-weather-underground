@@ -35,7 +35,7 @@ module.exports = (robot) ->
               "#{obs.display_location.full} is #{obs.weather}:\n" +
               "#{obs.observation_time}, " +
               "Temperature is #{obs.temp_c}°C " +
-              "(feels like #{obs.feelslike_c}°#C), " +
+              "(feels like #{obs.feelslike_c}°C), " +
               "Humidity #{obs.relative_humidity}, " +
               "Pressure #{obs.pressure_mb}hPa, " +
               "Wind #{obs.wind_string}, " +
@@ -46,7 +46,7 @@ module.exports = (robot) ->
               "#{obs.display_location.full} is #{obs.weather}:\n" +
               "#{obs.observation_time}, " +
               "Temperature is #{obs.temp_f}°F " +
-              "(feels like #{obs.feelslike_f}°#f), " +
+              "(feels like #{obs.feelslike_f}°F), " +
               "Humidity #{obs.relative_humidity}, " +
               "Pressure #{obs.pressure_mb}hPa, " +
               "Wind #{obs.wind_string}, " +
