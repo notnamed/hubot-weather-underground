@@ -29,8 +29,8 @@ module.exports = (robot) ->
         try
           data = JSON.parse(body)
           obs = data.current_observation
-          currtemp = obs.temp_#{WUNDERGROUND_UNITS}
-          feelslike = obs.feelslike_#{WUNDERGROUND_UNITS}
+          currtemp = "obs.temp_#{WUNDERGROUND_UNITS}"
+          feelslike = "obs.feelslike_#{WUNDERGROUND_UNITS}"
           msg.send "The current weather condition of " +
             "#{obs.display_location.full} is #{obs.weather}:\n" +
             "#{obs.observation_time}, " +
