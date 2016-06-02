@@ -12,11 +12,11 @@
 #   K.K. POON <noopkk@gmail.com>
 
 WUNDERGROUND_KEY = process.env.HUBOT_WEATHER_WUNDERGROUND_KEY
-
+WUNDERGROUND_UNTS = process.env.HUBOT_WEATHER_WUNDERGROUND_UNITS
 WUNDERGROUND_URL = "http://api.wunderground.com/api/#{WUNDERGROUND_KEY}"
 
 module.exports = (robot) ->
-  robot.respond /weather of (.*)/i, (msg) ->
+  robot.respond /weather (.*)/i, (msg) ->
     place = msg.match[1]
 
     msg.http("#{WUNDERGROUND_URL}/conditions/q/#{place}.json")
@@ -32,8 +32,8 @@ module.exports = (robot) ->
           msg.send "The current weather condition of " +
             "#{obs.display_location.full} is #{obs.weather}:\n" +
             "#{obs.observation_time}, " +
-            "Temperature is #{obs.temp_c}°C " +
-            "(feels like #{obs.feelslike_c}°C), " +
+            "Temperature is #{obs.temp_#{WUNDERGROUND_UNITS}}°#{WUNDERGROUND_UNITS} " +
+            "(feels like #{obs.feelslike_#{WUNDERGROUND_UNITS}}°#{WUNDERGROUND_UNITS}), " +
             "Humidity #{obs.relative_humidity}, " +
             "Pressure #{obs.pressure_mb}hPa, " +
             "Wind #{obs.wind_string}, " +
