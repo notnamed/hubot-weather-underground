@@ -12,7 +12,7 @@
 #   K.K. POON <noopkk@gmail.com>
 
 WUNDERGROUND_KEY = process.env.HUBOT_WEATHER_WUNDERGROUND_KEY
-WUNDERGROUND_UNTS = process.env.HUBOT_WEATHER_WUNDERGROUND_UNITS
+WUNDERGROUND_UNITS = process.env.HUBOT_WEATHER_WUNDERGROUND_UNITS
 WUNDERGROUND_URL = "http://api.wunderground.com/api/#{WUNDERGROUND_KEY}"
 
 module.exports = (robot) ->
