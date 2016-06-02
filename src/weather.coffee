@@ -30,7 +30,7 @@ module.exports = (robot) ->
           data = JSON.parse(body)
           obs = data.current_observation
           switch WUNDERGROUND_UNITS
-            when "c" then
+            when "c"
               msg.send "The current weather condition of " +
               "#{obs.display_location.full} is #{obs.weather}:\n" +
               "#{obs.observation_time}, " +
@@ -41,7 +41,7 @@ module.exports = (robot) ->
               "Wind #{obs.wind_string}, " +
               "UV #{obs.UV}\n" +
               "More information: #{obs.ob_url}"
-            when "f" then
+            when "f"
               msg.send "The current weather condition of " +
               "#{obs.display_location.full} is #{obs.weather}:\n" +
               "#{obs.observation_time}, " +
