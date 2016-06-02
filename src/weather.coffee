@@ -29,18 +29,28 @@ module.exports = (robot) ->
         try
           data = JSON.parse(body)
           obs = data.current_observation
-          currtemp = "obs.temp_#{WUNDERGROUND_UNITS}"
-          feelslike = "obs.feelslike_#{WUNDERGROUND_UNITS}"
-          msg.send "The current weather condition of " +
-            "#{obs.display_location.full} is #{obs.weather}:\n" +
-            "#{obs.observation_time}, " +
-            "Temperature is #{currtemp}°#{WUNDERGROUND_UNITS} " +
-            "(feels like #{feelslike}°#{WUNDERGROUND_UNITS}), " +
-            "Humidity #{obs.relative_humidity}, " +
-            "Pressure #{obs.pressure_mb}hPa, " +
-            "Wind #{obs.wind_string}, " +
-            "UV #{obs.UV}\n" +
-            "More information: #{obs.ob_url}"
+          if WUNDERGROUND_UNITS = "c"
+            msg.send "The current weather condition of " +
+              "#{obs.display_location.full} is #{obs.weather}:\n" +
+              "#{obs.observation_time}, " +
+              "Temperature is #{obs.temp_c}°C " +
+              "(feels like #{obs.feelslike_c}°#C), " +
+              "Humidity #{obs.relative_humidity}, " +
+              "Pressure #{obs.pressure_mb}hPa, " +
+              "Wind #{obs.wind_string}, " +
+              "UV #{obs.UV}\n" +
+              "More information: #{obs.ob_url}"
+            else
+              msg.send "The current weather condition of " +
+              "#{obs.display_location.full} is #{obs.weather}:\n" +
+              "#{obs.observation_time}, " +
+              "Temperature is #{obs.temp_f}°F " +
+              "(feels like #{obs.feelslike_f}°#f), " +
+              "Humidity #{obs.relative_humidity}, " +
+              "Pressure #{obs.pressure_mb}hPa, " +
+              "Wind #{obs.wind_string}, " +
+              "UV #{obs.UV}\n" +
+              "More information: #{obs.ob_url}"
 
         catch err
           msg.send err
