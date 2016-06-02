@@ -19,6 +19,7 @@ Then add **hubot-weather-underground** to your `external-scripts.json`:
 ## Set the environment variables
 
 `HUBOT_WEATHER_WUNDERGROUND_KEY=YOUR_WUNDERGROUND_KEY`
+
 `HUBOT_WEATHER_WUNDERGROUND_UNITS=f` - for Fahrenheit
 `HUBOT_WEATHER_WUNDERGROUND_UNITS=c` - for Celcius
 
